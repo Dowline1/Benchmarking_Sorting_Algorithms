@@ -4,7 +4,7 @@ import random
 import time
 
 # Sizes of random arrays to be generated
-array_size_list = [500, 750, 1000, 1250, 2500, 3750, 5000, 6250, 7500, 8750, 10000]
+array_size_list = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 2500, 3750, 5000, 6250, 7500, 8750, 10000]
 
 # Variables to store avg times for each array 
 # size by algorithm
@@ -212,132 +212,151 @@ def main():
                     bucket_counter = 0
                     shell_counter = 0
                     gnome_counter = 0
-                    bubble_run_times = []
-                    heap_run_times = []
-                    bucket_run_times = []
-                    shell_run_times = []
-                    gnome_run_times = []
+
+
+                    # Start times of algorithm
+                    start_time = time.time()
 
                     # While loop runs algorithm 10 times Bubble Sort
                     while bubble_counter < 10:
                         
                         # Generates the array for each run/array size
                         test_array = random_array(i)
-                        # Start times of algorithm
-                        start_time = time.time()
+
                         # Executes Bubble Sort Algorithm
                         bubbleSort(test_array)
-                        # End times of algorithm
-                        end_time = time.time()
-                        # Time elapsed to complete sort algorithm
-                        time_elapsed = end_time - start_time
-                        # Stores each run time
-                        bubble_run_times.append(time_elapsed)
+
                         # Increase counter by 1
                         bubble_counter = bubble_counter + 1
-                        print("Bubble", i, "Time Elapsed", time_elapsed)
                         
+                    # End times of algorithm
+                    end_time = time.time()
+                    
+                    # Time elapsed to complete sort algorithm
+                    time_elapsed = end_time - start_time
 
                     # Appends average time of the 10 runs for the algorithm
                     # including for each array size    
-                    bubble_sort_times.append(sum(bubble_run_times)/len(bubble_run_times))
+                    bubble_sort_times.append(time_elapsed/10)
+                    
 
+                    # Start times of algorithm
+                    start_time = time.time()
 
                     # While loop runs algorithm 10 times Heap Sort
                     while heap_counter < 10:
                         
                         # Generates the array for each run/array size
                         test_array = random_array(i)
-                        # Start times of algorithm
-                        start_time = time.time()
-                        # Executes Bubble Sort Algorithm
+
+                        # Executes Heap Sort Algorithm
                         heapSort(test_array)
-                        # End times of algorithm
-                        end_time = time.time()
-                        # Time elapsed to complete sort algorithm
-                        time_elapsed = end_time - start_time
-                        # Stores each run time
-                        heap_run_times.append(time_elapsed)
+
                         # Increase counter by 1
                         heap_counter = heap_counter + 1
-                        print("Heap", i, "Time Elapsed", time_elapsed)
+
+                    # End times of algorithm
+                    end_time = time.time()
+                    
+                    # Time elapsed to complete sort algorithm
+                    time_elapsed = end_time - start_time
 
                     # Appends average time of the 10 runs for the algorithm
                     # including for each array size    
-                    heap_sort_times.append(sum(heap_run_times)/len(heap_run_times))
+                    heap_sort_times.append(time_elapsed/10)
 
 
-                    # While loop runs algorithm 10 times Counting Sort
+                    # Start times of algorithm
+                    start_time = time.time()
+
+                    # While loop runs algorithm 10 times Bucket Sort
                     while bucket_counter < 10:
                         
                         # Generates the array for each run/array size
                         test_array = random_array(i)
-                        # Start times of algorithm
-                        start_time = time.time()
-                        # Executes Bubble Sort Algorithm
+
+                        # Executes Bucket Sort Algorithm
                         bucketSort(test_array)
-                        # End times of algorithm
-                        end_time = time.time()
-                        # Time elapsed to complete sort algorithm
-                        time_elapsed = end_time - start_time
-                        # Stores each run time
-                        bucket_run_times.append(time_elapsed)
+
                         # Increase counter by 1
                         bucket_counter = bucket_counter + 1
-                        print("Bucket", i, "Time Elapsed", time_elapsed)
+
+                    # End times of algorithm
+                    end_time = time.time()
+                    
+                    # Time elapsed to complete sort algorithm
+                    time_elapsed = end_time - start_time
 
                     # Appends average time of the 10 runs for the algorithm
                     # including for each array size    
-                    bucket_sort_times.append(sum(bucket_run_times)/len(bucket_run_times))
+                    bucket_sort_times.append(time_elapsed/10)
 
+
+                    # Start times of algorithm
+                    start_time = time.time()
 
                     # While loop runs algorithm 10 times Shell Sort
                     while shell_counter < 10:
                         
                         # Generates the array for each run/array size
                         test_array = random_array(i)
-                        # Start times of algorithm
-                        start_time = time.time()
-                        # Executes Bubble Sort Algorithm
+
+                        # Executes Shell Sort Algorithm
                         shellSort(test_array)
-                        # End times of algorithm
-                        end_time = time.time()
-                        # Time elapsed to complete sort algorithm
-                        time_elapsed = end_time - start_time
-                        # Stores each run time
-                        shell_run_times.append(time_elapsed)
+
                         # Increase counter by 1
                         shell_counter = shell_counter + 1
-                        print("Shell", i, "Time Elapsed", time_elapsed)
+
+                    # End times of algorithm
+                    end_time = time.time()
+                    
+                    # Time elapsed to complete sort algorithm
+                    time_elapsed = end_time - start_time
 
                     # Appends average time of the 10 runs for the algorithm
                     # including for each array size    
-                    shell_sort_times.append(sum(shell_run_times)/len(shell_run_times))
+                    shell_sort_times.append(time_elapsed/10)
 
+
+                    # Start times of algorithm
+                    start_time = time.time()
 
                     # While loop runs algorithm 10 times Gnome Sort
                     while gnome_counter < 10:
                         
                         # Generates the array for each run/array size
                         test_array = random_array(i)
-                        # Start times of algorithm
-                        start_time = time.time()
-                        # Executes Bubble Sort Algorithm
+
+                        # Executes Gnome Sort Algorithm
                         gnomeSort(test_array, len(test_array))
-                        # End times of algorithm
-                        end_time = time.time()
-                        # Time elapsed to complete sort algorithm
-                        time_elapsed = end_time - start_time
-                        # Stores each run time
-                        gnome_run_times.append(time_elapsed)
+
                         # Increase counter by 1
                         gnome_counter = gnome_counter + 1
-                        print("Gnome", i, "Time Elapsed", time_elapsed)
+
+                    # End times of algorithm
+                    end_time = time.time()
+                    
+                    # Time elapsed to complete sort algorithm
+                    time_elapsed = end_time - start_time
 
                     # Appends average time of the 10 runs for the algorithm
                     # including for each array size    
-                    gnome_sort_times.append(sum(gnome_run_times)/len(gnome_run_times))
+                    gnome_sort_times.append(time_elapsed/10)
 
+                for i in bubble_sort_times:
+                    print("Bubble", i)
+
+                for i in heap_sort_times:
+                    print("Heap", i)
+
+                for i in bucket_sort_times:
+                    print("Bucket", i)
+
+                for i in shell_sort_times:
+                    print("Shell", i)
+
+                for i in gnome_sort_times:
+                    print("Gnome", i)
 
             
             if choice == "quit":
